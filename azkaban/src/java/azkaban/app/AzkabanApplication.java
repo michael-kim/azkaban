@@ -45,6 +45,7 @@ import azkaban.jobs.builtin.JavaJob;
 import azkaban.jobs.builtin.JavaProcessJob;
 import azkaban.jobs.builtin.NoopJob;
 import azkaban.jobs.builtin.PigProcessJob;
+import azkaban.jobs.builtin.HiveProcessJob;
 import azkaban.jobs.builtin.ProcessJob;
 import azkaban.jobs.builtin.PythonJob;
 import azkaban.jobs.builtin.RubyJob;
@@ -131,6 +132,7 @@ public class AzkabanApplication
                  .put("command", ProcessJob.class)
                  .put("javaprocess", JavaProcessJob.class)
                  .put("pig", PigProcessJob.class)
+                 .put("hive", HiveProcessJob.class)
                  .put("propertyPusher", NoopJob.class)
                  .put("python", PythonJob.class)
                  .put("ruby", RubyJob.class)
