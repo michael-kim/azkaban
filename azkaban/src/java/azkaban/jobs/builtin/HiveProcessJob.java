@@ -42,7 +42,7 @@ public class HiveProcessJob extends JavaProcessJob {
 	@Override
 	protected List<String> getClassPaths() {
 		List<String> classPath = super.getClassPaths();
-
+		
 		// Add hadoop home setting.
 		String hadoopHome = System.getenv("HADOOP_HOME");
 		if (hadoopHome == null) {
@@ -101,12 +101,6 @@ public class HiveProcessJob extends JavaProcessJob {
 	protected String getJVMArguments() {
 		// TODO Auto-generated method stub
 		return super.getJVMArguments();
-	}
-
-	@Override
-	protected String createArguments(List<String> arguments, String separator) {
-		String args = super.getJVMArguments();
-		return args;
 	}
 
 	protected Map<String, String> getHiveConfs() {
