@@ -12,7 +12,9 @@ import azkaban.app.JobDescriptor;
  * 
  */
 public class SqoopProcessJob extends JavaProcessJob {
+	public static final String SQOOP_TOOL = "sqoop.tool";
 	public static final String SQOOP_ARGS = "sqoop.args";
+
 	public static final String SQOOP_JAVA_CLASS = "com.cloudera.sqoop.Sqoop";
 
 	/**
@@ -54,6 +56,26 @@ public class SqoopProcessJob extends JavaProcessJob {
 
 	@Override
 	protected String getMainArguments() {
-		return getProps().getString(SQOOP_ARGS, "");
+		ArrayList<String> list = new ArrayList<String>();
+		
+		String tool = getSqoopTool();
+		if (tool != null) {
+			list.add(tool);
+		}
+		
+		String args = getSqoopArgs();
+		if (args != null) {
+			list.add(args);
+		}
+		
+		return org.apache.commons.lang.StringUtils.join(list, " ");
+	}
+	
+	protected String getSqoopTool() {
+		return getProps().getString(SQOOP_TOOL, null);
+	}
+	
+	protected String getSqoopArgs() {
+		return getProps().getString(SQOOP_ARGS, null);
 	}
 }
