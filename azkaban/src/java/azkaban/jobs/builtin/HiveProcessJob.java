@@ -1,6 +1,3 @@
-/**
- * 
- */
 package azkaban.jobs.builtin;
 
 import java.io.File;
@@ -12,8 +9,6 @@ import azkaban.app.JobDescriptor;
 
 /**
  * Hive Job
- * 
- * @author Brandon (brandon.kim@nexr.com)
  * 
  */
 public class HiveProcessJob extends JavaProcessJob {
@@ -66,13 +61,11 @@ public class HiveProcessJob extends JavaProcessJob {
 
 	@Override
 	protected String getInitialMemorySize() {
-		// TODO Auto-generated method stub
 		return HIVE_INITIAL_MEMORY_SIZE;
 	}
 
 	@Override
 	protected String getMaxMemorySize() {
-		// TODO Auto-generated method stub
 		return HIVE_MAX_MEMORY_SIZE;
 	}
 
@@ -95,12 +88,6 @@ public class HiveProcessJob extends JavaProcessJob {
 		}
 
 		return org.apache.commons.lang.StringUtils.join(list, " ");
-	}
-
-	@Override
-	protected String getJVMArguments() {
-		// TODO Auto-generated method stub
-		return super.getJVMArguments();
 	}
 
 	protected Map<String, String> getHiveConfs() {
