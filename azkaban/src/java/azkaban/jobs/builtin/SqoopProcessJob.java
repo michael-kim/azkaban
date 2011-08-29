@@ -8,7 +8,7 @@ import java.util.Map;
 import azkaban.app.JobDescriptor;
 
 /**
- * Hive Job
+ * Sqoop Job
  * 
  */
 public class SqoopProcessJob extends JavaProcessJob {
